@@ -1,0 +1,139 @@
+body {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.copyright {
+    color: #ffffff;
+}
+
+.footer {
+    text-align: center;
+}
+
+.footer a {
+    color: #ee4444;
+}
+
+/*.sidebar h1 {
+    color: #ee4444;
+    font-size: 1.3em;
+}*/
+
+.sidebar h1 {
+    color: #D14;
+    font-size: 1.3em;
+}
+
+.sidebar a {
+    color: #428bca;
+}
+
+.sidebar li {
+    margin-top: .7em;
+    line-height: 1em;
+}
+
+.sidebar a:hover {
+    color: #3071a9;
+}
+
+.container-left {
+      width: 1024px;
+     /* margin: 0px;*/
+      position: relative;
+      left: 0px;
+      top: 15px;
+}
+
+.well h1 {
+    color: #ee4444;
+    font-size: 1.3em;
+}
+
+.well {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+    border: 0px solid #E3E3E3; 
+    border-radius: 0px;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.05) inset; 
+    border-bottom: 1px solid #C0C0C0
+    }
+
+.author {
+    color: #ee4444;
+}
+
+.author a {
+    color: #ee4444;
+}
+
+.postDate {
+      margin: 0px;
+      position: relative;
+      left: 0px;
+      top: 0px;
+      font-size: 16px;
+}
+
+/* kevin add */
+
+.well_sidebar {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    /*background-color: #F5F5F5;*/
+    background-color: #FFF;
+    border: 0px solid #E3E3E3; 
+    border-radius: 4px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05) inset;
+    }
+
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: right;
+}
+
+.navbar-nav {
+    position: relative;
+    left: 0px;
+}
+
+.col-md-9 {
+    width: 70%;
+}
+
+.col-md-3 {
+    width: 30%;
+}
+
+/* Blog Title */
+.navbar-header {
+    float: left;
+   /* position: relative;
+    left: 285px; */
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #D14;
+    background-color: rgb(255, 255, 255);
+}
+
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+    color: #D14;
+    background-color: transparent;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    /*border-color: #101010;*/
+    border-color: #D14;
+    background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+}
+
+.pagination {
+    display: inline-block;
+    padding-left: 300px;
+    margin: 20px 0px;
+    border-radius: 4px;
+}
