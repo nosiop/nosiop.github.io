@@ -1,12 +1,11 @@
 ---
 layout: default
 ---
-
-{% for post in paginator.posts %}
-<div class="article">
-    <div class="well">
+{%for post in site.posts limit: 1%}
+<!--div class="article">
+    <div class="well"-->
         <!--h1><a href="{{ site.baseurl}}{{ post.url }}">{{ post.date | date: "%b %-d, %Y" }} - {{ post.title }}</a></h1-->
-	<h1><a href="{{ site.baseurl}}{{ post.url }}">{{ post.date | date: "%b %-d, %Y" }} -- {{ post.title }}</a></h1>
+	<!--h1><a href="{{ site.baseurl}}{{ post.url }}">{{ post.date | date: "%b %-d, %Y" }} - {{ post.title }}</a></h1>
 	<div class="postDate"> </div></br>
         {% if site.comments == true and post.comments == true and site.disqus != '' %}
           <p class="author"><a href="{{ site.baseurl }}{{ post.url }}/#disqus_thread">Comments</a></p>
@@ -15,7 +14,18 @@ layout: default
 		{{ post.content }} 
         </div>
     </div>
-</div>
+</div-->
+{% endfor %}
+
+            <div class="post-content">
+		    <img src="{{site.baseurl}}/images/tree.jpg" alt=""/>
+	    </div>
+
+{% for post in paginator.posts %}
+    <div class="well">
+        <h1><a href="{{ site.baseurl}}{{ post.url }}">{{ post.date | date: "%b %-d, %Y" }} - {{ post.title }}</a></h1>
+	<!--h1><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}<p class="index_title">{{ post.date | date: "%b %-d, %Y" }}</p></a></h1-->
+    </div>
 {% endfor %}
 
 <div class="pagination">
