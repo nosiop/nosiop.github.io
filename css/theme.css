@@ -149,3 +149,13 @@ body {
     margin: 7px;
 }
 	    
+.navbar-fixed-top {
+    top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1024px;
+}
+
+.navbar-nav {
+    float: right;
+}
