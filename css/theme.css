@@ -159,3 +159,9 @@ body {
 .navbar-nav {
     float: right;
 }
+
+#backTop {
+	position: fixed;
+	right: 280px;
+	bottom: 100px;
+}
