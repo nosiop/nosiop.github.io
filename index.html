@@ -2,7 +2,7 @@
 layout: default
 ---
 
-    <div class="post-content" align="center">
+    <div class="index-content" align="center">
 	    <img src="{{site.baseurl}}/images/index.jpg" alt=""/>
     </div>
 
@@ -16,7 +16,7 @@ layout: default
 <div class="pagination">
   {% if paginator.previous_page %}
       {% if paginator.previous_page == 1 %}
-      <a class="btn btn-default" href="{{ site.baseurl}}/index.html" class="previous">上一页<!--newer--></a>
+        <a class="btn btn-default" href="{{ site.baseurl}}/index.html" class="previous">上一页<!--newer--></a>
       {% else %}
         <a class="btn btn-default" href="{{ site.baseurl}}/page{{ paginator.previous_page }}" class="previous">上一页<!--newer--></a>
       {% endif %}

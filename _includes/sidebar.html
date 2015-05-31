@@ -6,10 +6,10 @@
 	<!--h1> Recent Post </h1-->
 	<h1> 最近文章 </h1>
     <ul>
-        {% for post in site.posts limit:7 %}
-          <li><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
-        {% endfor %}
     </ul>
+        {% for post in site.posts limit:11 %}
+          <li class="texthidden" style="list-style-type:none;"><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
 </div>
 
 <!--div class="sidebar well_sidebar">
