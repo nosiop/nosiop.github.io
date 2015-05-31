@@ -32,6 +32,7 @@ function backToTop() {
 	//初始化
 	$(function() {
 		$('[data-toggle="tooltip"]').tooltip();
+		$('#backTop').hide();
 	});
 }
 
