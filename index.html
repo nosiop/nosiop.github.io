@@ -2,27 +2,27 @@
 layout: default
 ---
 
-    <div class="index-content" align="center">
-	    <img src="{{site.baseurl}}/images/index.jpg" alt=""/>
-    </div>
+<div class="index-content" align="center">
+	<img src="{{site.baseurl}}/images/index.jpg" alt=""/>
+</div>
 
 {% for post in paginator.posts %}
-    <div class="well">
-        <h1><a href="{{ site.baseurl}}{{ post.url }}">{{ post.date | date: "%b %-d, %Y" }} - {{ post.title }}</a></h1>
+<div class="well">
+	<h1><a href="{{ site.baseurl}}{{ post.url }}">{{ post.date | date: "%b %-d, %Y" }} - {{ post.title }}</a></h1>
 	<!--h1><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}<p class="index_title">{{ post.date | date: "%b %-d, %Y" }}</p></a></h1-->
-    </div>
+</div>
 {% endfor %}
 
 <div class="pagination">
-  {% if paginator.previous_page %}
-      {% if paginator.previous_page == 1 %}
-        <a class="btn btn-default" href="{{ site.baseurl}}/index.html" class="previous">上一页<!--newer--></a>
-      {% else %}
-        <a class="btn btn-default" href="{{ site.baseurl}}/page{{ paginator.previous_page }}" class="previous">上一页<!--newer--></a>
-      {% endif %}
-  {% endif %}
-  <span class="page_number "><!-- Page -->页码: {{ paginator.page }} of {{ paginator.total_pages }}</span>
-  {% if paginator.next_page %}
-  <a class="btn btn-default" href="{{ site.baseurl}}/page{{ paginator.next_page }}" class="next">下一页<!--Older--></a>
-  {% endif %}
+	{% if paginator.previous_page %}
+	{% if paginator.previous_page == 1 %}
+	<a class="btn btn-default" href="{{ site.baseurl}}/index.html" class="previous">上一页<!--newer--></a>
+	{% else %}
+	<a class="btn btn-default" href="{{ site.baseurl}}/page{{ paginator.previous_page }}" class="previous">上一页<!--newer--></a>
+	{% endif %}
+	{% endif %}
+	<span class="page_number "><!-- Page -->页码: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+	{% if paginator.next_page %}
+	<a class="btn btn-default" href="{{ site.baseurl}}/page{{ paginator.next_page }}" class="next">下一页<!--Older--></a>
+	{% endif %}
 </div>
