@@ -2,14 +2,14 @@
 {{ site.description }}
 </div-->
 
-<div class="sidebar well_sidebar">
+<div class="well_sidebar">
 	<!--h1> Recent Post </h1-->
 	<h1> 最近文章 </h1>
     <ul>
-    </ul>
         {% for post in site.posts limit:11 %}
-          <li class="texthidden" style="list-style-type:none;"><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
+          <li class="texthidden"><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
         {% endfor %}
+    </ul>
 </div>
 
 <!--div class="sidebar well_sidebar">

@@ -4,15 +4,14 @@
 $(document).ready(function() {
 	generateIndex();
 	backToTop();
-
 });
 
-function generateIndex() {
+function generateIndex(){
 	if(typeof $('#markdown-toc').html() === 'undefined'){
 		$('#side_index').hide();
 	} else {
 		$('#markdown-toc').hide();
-		$('#side_index').html('<h1>文章索引</h1><br>'+'<ul>'+$('#markdown-toc').html()+'</ul>');
+		$('#side_index').html('<h1>文章索引</h1>'+'<ul>'+$('#markdown-toc').html()+'</ul>');
 	}
 }
 
@@ -26,8 +25,8 @@ function backToTop() {
 		}
 	});
 	// 点击回到顶部
-	$('#backTop').click(function() {
-		$('body').animate({scrollTop:"0"},500);
+	$('#backTop').click(function(){
+		$("body").animate({scrollTop:"0px"},500);
 	});
 	//初始化
 	$(function() {
@@ -35,5 +34,6 @@ function backToTop() {
 		$('#backTop').hide();
 	});
 }
+
 
 

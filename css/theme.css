@@ -15,6 +15,10 @@ body {
 	color: #ee4444;
 }
 
+.sidebar {
+	position: fixed;
+}
+
 .sidebar h1 {
 	color: #D14;
 	font-size: 1.3em;
@@ -27,6 +31,7 @@ body {
 .sidebar li {
 	margin-top: .7em;
 	line-height: 1em;
+	list-style-type:lower-roman;
 }
 
 .sidebar a:hover {
@@ -85,9 +90,21 @@ body {
 	border-radius: 4px;
 	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.05) inset;
 	margin-left: 30px;
-	margin-top: 30px;
+	position: fixed;
+	overflow: auto;
 }
 
+.well_sidebar h1 {
+	color: #D14;
+	font-size: 23px;
+}
+
+.well_sidebar li {
+	margin-top: .7em;
+	line-height: 1em;
+	list-style-type: disc;
+
+}
 /*归档和分类页面*/
 .well_list h1 {
 	color: #ee4444;
@@ -161,9 +178,10 @@ body {
 /*页码按钮*/
 .pagination {
 	display: inline-block;
-	padding-left: 300px;
-	margin: 20px 0px;
 	border-radius: 4px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /*图片设置不超过最大宽度*/
@@ -186,15 +204,22 @@ body {
 /*设置回到顶部的位置*/
 #backTop {
 	position: fixed;
-	right: 280px;
+	right: 100px;
 	bottom: 100px;
 }
 /*隐藏超过一行文字的标题*/
 .texthidden {
-	/*width:200px;*/
+	/*width:200px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-	font-size: 17px;
+	font-size: 17px;*/
 }
 
+.navbar-fixed-top {
+	position: absolute;
+}
+
+li{
+	list-style-type:circle;
+}
