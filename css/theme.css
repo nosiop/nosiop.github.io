@@ -226,3 +226,7 @@ body {
 li{
 	list-style-type:circle;
 }
+
+.cate {
+	text-align: center;
+}
