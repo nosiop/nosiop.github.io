@@ -18,7 +18,7 @@ body {
 .sidebar {
 	position: fixed;
 	height: 500px;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 .sidebar h1 {
