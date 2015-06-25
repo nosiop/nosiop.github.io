@@ -9,6 +9,9 @@ $(document).ready(function() {
 function generateIndex(){
 	if(typeof $('#markdown-toc').html() === 'undefined'){
 		$('#side_index').hide();
+		if(typeof $('#side_index').html() !== 'undefined'){
+			$('.col-md-9').css('width','100%');
+		}
 	} else {
 		$('#markdown-toc').hide();
 		$('#side_index').html('<h1>文章索引</h1>'+'<ul>'+$('#markdown-toc').html()+'</ul>');
