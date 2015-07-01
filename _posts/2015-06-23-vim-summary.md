@@ -3,6 +3,7 @@ layout: post
 title:  "Vim实践操作总结"
 date:  2015-06-23 
 categories: linux vim
+comments: true
 excerpt:
 ---
 

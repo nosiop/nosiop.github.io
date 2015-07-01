@@ -3,6 +3,7 @@ layout: post
 title:  "Find和Grep命令应用"
 date:  2015-06-27 
 categories: linux
+comments: true
 excerpt:
 ---
 

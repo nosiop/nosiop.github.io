@@ -3,6 +3,7 @@ layout: post
 title:  "Mysql基础"
 date:  2015-06-30 
 categories: database
+comments: true
 excerpt:
 ---
 

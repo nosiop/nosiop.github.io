@@ -3,6 +3,7 @@ layout: post
 title:  "孤独是人生的必修课"
 date:  2015-06-26 
 categories: life
+comments: true
 excerpt:
 ---
 

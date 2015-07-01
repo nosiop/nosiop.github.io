@@ -3,6 +3,7 @@ layout: post
 title:  "Git知识总结"
 date:  2015-06-24 
 categories: git
+comments: true
 excerpt:
 ---
 

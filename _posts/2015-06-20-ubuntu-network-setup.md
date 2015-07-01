@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "Ubuntu Network Setup"
+title:  "Ubuntu network setup"
 date:   2015-06-20 
 categories: ubuntu
+comments: true
 excerpt: 
 ---
 
