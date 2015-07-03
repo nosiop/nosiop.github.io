@@ -234,6 +234,11 @@ body {
 	font-size: 17px;*/
 }
 
+/*设置pre自动换行*/
+pre {
+	white-space: pre-wrap;
+}
+
 .navbar-fixed-top {
 	position: absolute;
 }

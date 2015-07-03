@@ -23,6 +23,7 @@ eg： `if test $var == "yes"` 等同于  `if [ $var == "yes" ]`
 `if test !表达式为假`--表达式为假时返回真  
 `test 表达式1 –a 表达式2`--与[AND]两个表达式都为真时返回真  
 `test 表达式1 –o 表达式2`--或[OR]两个表达式有一个为真时返回真  
+`test !表达式`--非[NOT]逻辑表达式为反时为真
 
 ---
 
@@ -54,14 +55,21 @@ eg： `if test $var == "yes"` 等同于  `if [ $var == "yes" ]`
 
 ---
 
+`test –d File`--文件存在并且是目录  
+`test –e File`--文件存在  
+`test –f File`--文件存在并且是普通文件  
+`test –s File`--文件存在并且文件长度非0  
+
+`test –r File`--文件存在并且可读  
+`test –w File`--文件存在并且可写  
+`test –x File`--文件存在并且可执行  
+
 `test File1 –ef File2`--两个文件具有同样的设备号和i结点号  
 `test File1 –nt File2`--文件1比文件2 新  
 `test File1 –ot File2`--文件1比文件2 旧  
+
 `test –b File`--文件存在并且是块设备文件  
 `test –c File`--文件存在并且是字符设备文件  
-`test –d File`--文件存在并且是目录  
-`test –e File`--文件存在  
-`test –f File`--文件存在并且是正规文件  
 `test –g File`--文件存在并且是设置了组ID  
 `test –G File`--文件存在并且属于有效组ID  
 `test –h File`--文件存在并且是一个符号链接（同-L）  
@@ -70,14 +78,44 @@ eg： `if test $var == "yes"` 等同于  `if [ $var == "yes" ]`
 `test –L File`--文件存在并且是一个符号链接（同-h）  
 `test –o File`--文件存在并且属于有效用户ID  
 `test –p File`--文件存在并且是一个命名管道  
-`test –r File`--文件存在并且可读  
-`test –s File`--文件存在并且是一个套接字  
 `test –t FD`--文件描述符是在一个终端打开的  
 `test –u File`--文件存在并且设置了它的set-user-id位  
-`test –w File`--文件存在并且可写  
-`test –x File`--文件存在并且可执行  
+
 
 ---
+
+###5.变量替换（赋值）
+
+---
+
+shell提供了变量替换功能，使用户能够检查变量的值并根据选项改变它的值。  
+`$variable`　　　　　　保存在variable中的值  
+`${variable}`　　　　　保存在variable中的值  
+`${variable:-string}`　　如果variable的值非空，则值为variable，否则值为string  
+`${variable:+string}`　　如果variable的值非空，则值为string，否则值为空  
+`${variable:=string}`　　如果variable的值非空，则值为variable，否则值为string且variable的值设置为string  
+`${variable:?string}`　　如果variable的值非空，则值为variable，否则显示string并退出  
+
+---
+
+###6.命令行参数/位置变量
+
+---
+
+$0　　　　　　　脚本的名字  
+$1, $2, ..., $9　　脚本第1个到第9个命令行参数  
+$#　　　　　　　命令行参数的个数  
+$@或是$*　　　　所有命令行参数  
+$?　　　　　　　最后一条命令的退出状态  
+$$　　　　　　　正在执行进程的ID（PID）  
+
+---
+
+###7.其他
+
+当在对变量进行判断时最好将变量用双引号括起来，这样可以避免参数包含空格或是TAB带来的问题。
+
+如：”$HOME“、"$#"
 
 在 shell 脚本中进行的每一种操作（除最简单的命令编组之外）都需要检查条件。所有的 shell 脚本“逻辑” — 广义意义下的“逻辑” — 通常都可以分为以下三大类：
 
