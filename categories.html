@@ -24,10 +24,11 @@ layout: default
 	<a href="#top"><img src="{{site.baseurl}}/images/top.png"></a>
 </div>
 <div class="cate">
-	<p>|
+	<p>
 	{%for category in site.categories %}
 	{%capture cate%}{{ category | first | capitalize }}{%endcapture%}
-	<a href="#{{cate}}">{{cate}}</a>&nbsp|
+	{%capture cate_n%}{{ category[1].size }}{%endcapture%}
+		<a href="#{{cate}}">{{cate}}</a><sup>{{cate_n}}</sup>&nbsp&nbsp&nbsp
 	{% endfor %}
 	</p>
 </div>

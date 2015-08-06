@@ -250,3 +250,9 @@ li{
 .cate {
 	text-align: center;
 }
+
+sup {
+	top: -.4em;
+	left: .2em;
+	color: #ee4444;
+}
