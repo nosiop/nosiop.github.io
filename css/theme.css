@@ -41,17 +41,9 @@ body {
 	color: #3071a9;
 }
 
-.container-left {
-	width: 940px;
-	/* margin: 0px;*/
-	position: relative;
-	left: 0px;
-	top: 0px;
-}
-
 .well h1 {
 	color: #ee4444;
-	font-size: 18px;
+	font-size: 1.2em;;
 }
 
 .well {
@@ -107,7 +99,7 @@ body {
 	border-radius: 4px;
 	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.05) inset;
 	margin-left: 30px;
-	position: fixed;
+	/*position: fixed;*/
 	overflow: auto;
 }
 
@@ -145,11 +137,6 @@ body {
 	float: right;
 }
 
-.navbar-nav {
-	position: relative;
-	left: 0px;
-}
-
 .col-md-9 {
 	width: 70%;
 }
@@ -159,37 +146,38 @@ body {
 }
 
 /* 标题头的设置 */
-.navbar-header {
-	float: left;
-	/* position: relative;
-	left: 285px; */
+.container {
+	 /* width: 940px; */
 }
 
-.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
 	color: #D14;
-	background-color: rgb(255, 255, 255);
+	background-color: #FFF;
+	float: right;
 }
 
-.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+.navbar-inverse {
+	background-color: #FFF;
+	border-color: #FFF;
+	border-bottom-color: #c0c0c0;
+}
+
+.navbar-inverse .navbar-brand {
+	color: #000;
+}
+
+.navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover {
 	color: #D14;
 	background-color: transparent;
 }
 
-.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
-	/*border-color: #101010;*/
-	border-color: #D14;
-	background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+.navbar {
+	border-radius: 4px;
+	top: -30px;
 }
 
-.navbar-fixed-top {
-	top: 0px;
-	margin-left: auto;
-	margin-right: auto;
-	width: 940px;
-}
-
-.navbar-nav {
-	float: right;
+.navbar-inverse .navbar-toggle .icon-bar {
+	background-color: #D14;
 }
 
 /*页码按钮*/
@@ -222,8 +210,9 @@ body {
 /*设置回到顶部的位置*/
 #backTop {
 	position: fixed;
-	right: 100px;
+	right: 10px;
 	bottom: 100px;
+	z-index: 7;
 }
 /*隐藏超过一行文字的标题*/
 .texthidden {
@@ -241,6 +230,10 @@ pre {
 
 .navbar-fixed-top {
 	position: absolute;
+}
+
+.copyright {
+	color: #D14;
 }
 
 li{
