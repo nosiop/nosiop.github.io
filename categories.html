@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 <!--div class="well">
 {%for post in site.posts %}
 	{% unless post.next %}
@@ -27,8 +26,9 @@ layout: default
 	<p>
 	{%for category in site.categories %}
 	{%capture cate%}{{ category | first | capitalize }}{%endcapture%}
-	{%capture cate_n%}{{ category[1].size }}{%endcapture%}
-		<a href="#{{cate}}">{{cate}}</a><sup>{{cate_n}}</sup>&nbsp&nbsp&nbsp
+	<!--count how number of posts under every category-->
+	{%capture cate_num%}{{ category[1].size }}{%endcapture%}
+		<a href="#{{cate}}">{{cate}}</a><sup>{{cate_num}}</sup>&nbsp&nbsp&nbsp
 	{% endfor %}
 	</p>
 </div>
