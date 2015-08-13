@@ -12,7 +12,7 @@ excerpt:
 
 
 ##安装
-	sudo apt-get install mutt msmtp 
+	$sudo apt-get install mutt msmtp 
 	#一切默认设置就行。
 
 ---
