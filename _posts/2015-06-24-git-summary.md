@@ -91,6 +91,14 @@ git为我们创建的第一个分支master
 这条命令是在提交到暂存区之后又后悔了，使用它使文件恢复到版本库的状态  
 即使工作区的状态恢复到上次commit时候的状态  
 
+如果你要rollback的commit还没有push到远程仓库的话：  
+`$ git reset --hard <要rollback到的commit>`  
+
+如果已经push的话，可以先执行上面的命令，再强制推送你当前的版本到远程仓库：  
+`$ git push <remote> HEAD --force`  
+
+执行此命令的时候要小心，确保你的本地仓库是最新的并且没有其他人也在此时做push，否则可能会丢失数据。
+
 ---
 
 ###4.删除文件：  
@@ -295,7 +303,9 @@ feature分支是否推送，取决于你是否和小伙伴合作在上面开发
 `$ git branch --set-upstream branch-name orgin/branch-name`  
 来下来之后，常常会有合并冲突，需要手动解决  
 解决后再push就好了  
-              
+   
+---
+           
 ####3)多人合作的工作模式
 常常是这样的：  
 首先可以使用下面的命令推送自己的修改  
@@ -310,6 +320,17 @@ feature分支是否推送，取决于你是否和小伙伴合作在上面开发
 如果git提示"no tracking information",则说明本地分支没有和远程库的分支关联，使用下面的命令来关联  
 `$ git branch --set-upstream branch-name orgin/branch-name`  
       
+---
+
+####4) 对远程仓库进行Rollback(回滚）
+如果你要rollback的commit还没有push到远程仓库的话：  
+`$ git reset --hard <要rollback到的commit>`  
+
+如果已经push的话，可以先执行上面的命令，再强制推送你当前的版本到远程仓库：  
+`$ git push <remote> HEAD --force`  
+
+执行此命令的时候要小心，确保你的本地仓库是最新的并且没有其他人也在此时做push，否则可能会丢失数据。
+
 -------------------------------------------------------------------------------  
   
 ##标签管理：  
