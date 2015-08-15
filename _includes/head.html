@@ -6,18 +6,29 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title>{{ site.name }}</title>
-	
+
 	<script src="{{ site.baseurl }}/js/jquery.min.js"></script>
 	<script src="{{ site.baseurl }}/js/kapp.js"></script>
 	<script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
 
 	<link href="{{ site.baseurl }}/css/bootstrap.min.css" rel="stylesheet">
 	<link href="{{ site.baseurl }}/css/theme.css" rel="stylesheet">
-
-    <!--bookmark icon for different browers-->
+	<!--bookmark icon for different browers-->
 	<link rel="icon" href="{{ site.baseurl }}/images/favicon.ico" type="image/x-icon" />
 	<link rel="shortcut icon" href="{{ site.baseurl }}/images/favicon.ico" type="image/x-icon" />
 	<link rel="bookmark" href="{{ site.baseurl }}/images/favicon.ico"type="image/x-icon" />
 	<link rel="apple-touch-icon" href="{{ site.baseurl }}/images/favicon.ico"/>
+
+	<!--setup highlight start-->
+	<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/monokai_sublime.min.css"> 
+	<!-- <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/highlight.js/8.4/styles/monokai_sublime.min.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/highlight.js/8.4/styles/railscasts.min.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/highlight.js/8.4/styles/monokai.min.css"> --> 
+    <!-- <script type="text/javascript" src="http://apps.bdimg.com/libs/highlight.js/8.4/languages/dos.min.js"></script> -->
+	<!-- <script type="text/javascript" src="http://apps.bdimg.com/libs/highlight.js/8.4/highlight.min.js"></script> -->
+	<script type="text/javascript" src="{{ site.baseurl }}/js/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!--setup highlight end-->
+
 </head>
 
