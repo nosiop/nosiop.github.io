@@ -22,8 +22,20 @@
 					<div class="post-content">
 						{{ content }}
 					</div>
+
+						<!--page option-->
+						<hr />
+						<div class="pagination" align="center">
+							{% if page.next %}
+							<a class="btn btn-default" href="{{ site.baseurl}}{{ page.next.url }}" class="next">近期<!-- Newer --></a>&nbsp&nbsp&nbsp&nbsp
+							{% endif %}
+							{% if page.previous %}
+							<a class="btn btn-default" href="{{ site.baseurl}}{{ page.previous.url }}" class="previous">早期<!-- Older --></a>
+							{% endif %}
+						</div>
+						
 					{% if page.comments %}
-					<div class="ds-share" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-images="" data-content="{{ page.title }}" data-url="nosiop.github.io{{page.url}}">
+					<!--div class="ds-share" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-images="" data-content="{{ page.title }}" data-url="nosiop.github.io{{page.url}}">
 						<div class="ds-share-inline">
 							<ul  class="ds-share-icons-16">
 								<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
@@ -37,7 +49,7 @@
 							<div class="ds-share-icons-more">
 							</div>
 						</div>
-					</div>
+					</div-->
 					<!-- 多说公共JS代码 start -->
 					<script type="text/javascript">var duoshuoQuery = {short_name:"nosiop"};(function() {var ds = document.createElement('script');ds.type = 'text/javascript';ds.async = true;ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';ds.charset = 'UTF-8'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);})();</script>
 					<!-- 多说公共JS代码 end -->
@@ -47,14 +59,6 @@
 					<!-- 多说评论框 end -->
 					{% endif %}
 				</div>
-			</div>
-			<div class="pagination" align="center">
-				{% if page.next %}
-				<a class="btn btn-default" href="{{ site.baseurl}}{{ page.next.url }}" class="next">近期<!-- Newer --></a>&nbsp&nbsp&nbsp&nbsp
-				{% endif %}
-				{% if page.previous %}
-				<a class="btn btn-default" href="{{ site.baseurl}}{{ page.previous.url }}" class="previous">早期<!-- Older --></a>
-				{% endif %}
 			</div>
 
 		</div>

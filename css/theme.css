@@ -147,7 +147,7 @@ body {
 
 /* 标题头的设置 */
 .container {
-	 /* width: 940px; */
+	/* width: 940px; */
 }
 
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
@@ -236,6 +236,11 @@ pre {
 
 .copyright {
 	color: #D14;
+	height: 55px;
+	position: relative;
+	top: 50px;
+	background-color: rgb(236, 236, 236);
+	line-height: 4;
 }
 
 li{
@@ -250,4 +255,8 @@ sup {
 	top: -.4em;
 	left: .2em;
 	color: #ee4444;
+}
+
+body {
+	padding-bottom: 0px;
 }
