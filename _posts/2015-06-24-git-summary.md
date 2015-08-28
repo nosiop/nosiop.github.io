@@ -417,22 +417,28 @@ git也有alias就像linux的alias，很好用，特别是不能补全命令的wi
 
 ###3.搭建git服务器：  
 
-1. 在linux上搭建git服务器：  
+1.在linux上搭建git服务器：  
 `$ sudo apt-get install git    (sudo yum install git)`  
+建立独立的git用户
 `$ sudo adduser git`   
 
-2. 创建证书登录，收集所有需要登录用户的公钥，即id_rsa.pub放入/home/git/.ssh/authorized_keys文件里，一行一个  
+2.创建证书登录，收集所有需要登录用户的公钥，即id_rsa.pub放入`/home/git/.ssh/authorized_keys`文件里，一行一个  
 
-3. 初始化git仓库，切换到自己指定的git目录执行  
-`$ sudo git init -bare sample.git`--服务器专用的初始化方式  
+3.初始化git仓库，切换到自己指定的git目录执行  
+`$ sudo git init --bare sample.git`--服务器专用的初始化方式  
 
-4. 把git目录owner改为git  
+4.把git目录owner改为git  
 `$ sudo chown git:git sample.git`  
 
-5. 禁用git用户shell登录  
-在/etc/passwd文件中把git的登录运行文件改为/usr/bin/git-shell  
+>**注意：创建git用户时很可能是使用的root或其他账号，请注意目录和子目录文件的`owner:group`权限必须是git用户可用的**  
+
+5.禁用git用户shell登录  
+在`/etc/passwd`文件中把git的登录运行文件改为`/usr/bin/git-shell`（可以使用`$ which git-shell`查找git-shell的完整路径）  
+
+>**注意：登陆shell更改之后，服务器将无法再使用git账号通过ssh密码方式登陆服务器，所以务必保证ssh可以通过key免密码方式登陆运行正常**
+
 这样git服务器就设置好了，可以在自己的电脑上clone了  
-`$ git clone git@server:/srv/sample.git`  
+`$ git clone git@server:/path/sample.git`  
   
 <br/>  
 摘自廖雪峰的git教程(Thanks Liao) 
