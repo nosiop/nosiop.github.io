@@ -1,6 +1,3 @@
-
-
-
 $(document).ready(function() {
 	generateIndex();
 	backToTop();
@@ -17,9 +14,9 @@ function resizeWindow(){
 		$('.sidebar').hide();
 		$('.col-md-9').css('width','100%');
 	} else {
-		$('.well_sidebar').show();
-		$('.sidebar').show();
-		$('.col-md-9').css('width','70%');
+//		$('.well_sidebar').show();
+//		$('.sidebar').show();
+//		$('.col-md-9').css('width','70%');
 	}
 
 
@@ -32,9 +29,16 @@ function resizeWindow(){
 			$('.sidebar').hide();
 			$('.col-md-9').css('width','100%');
 		} else {
-			$('.well_sidebar').show();
-			$('.sidebar').show();
-			$('.col-md-9').css('width','70%');
+			// post page resize with no markdown-toc do no change still remain width:100% fix
+			if(typeof $('#markdown-toc').html() !== 'undefined'){
+				$('.sidebar').show();
+				$('.col-md-9').css('width','70%');
+			} 
+			// index page resize fix	
+			if(typeof $('.well_sidebar').html() !== 'undefined'){
+				$('.well_sidebar').show();
+				$('.col-md-9').css('width','70%');
+			}
 		}
     });
 }
