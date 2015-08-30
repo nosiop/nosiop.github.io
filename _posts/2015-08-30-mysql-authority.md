@@ -12,7 +12,7 @@ excerpt:
 
 ##常用命令
 
-**注意：以下所有的userName都和userName@[host]有所区别,具体[host]()有哪些请看下表**
+**注意：以下所有的userName都和userName@[host]有所区别,具体[HOST](#userhost)有哪些请看下表**
 
 用户管理  
 `use mysql;`
@@ -71,7 +71,7 @@ mysql5之前删除用户时必须先使用`revoke`删除用户权限，然后删
 查看用户权限：
 	
 	mysql>show grants on userName@host;
-	mysql>show grants; //查看当前登陆用户权限
+	mysql>show grants;  #查看当前登陆用户权限
 
 删除用户语法：
 	
@@ -81,13 +81,14 @@ mysql5之前删除用户时必须先使用`revoke`删除用户权限，然后删
 
 	mysql>use mysql;
 	mysql>DELETE FROM user WHERE User="userName" and Host="host";
-	mysql>flush privileges;
-	//删除用户数据库
+	mysql>flush privileges;  
+
+	#删除用户数据库
 	mysql>drop database userDB;
 
 更新用户密码：
 
-	mysql>
+	mysql>update mysql.user set password=password('xxxx') where user='userName' and host='host'
 
 
 **注意：**    
@@ -119,7 +120,7 @@ MySQL grant、revoke用户权限注意事项
 4，特定的列  
 5，特定的存储过程  
  
-###user表中host列的值的意义
+###user表中HOST列的值的意义
 <pre>
 %             匹配所有主机  
 localhost     localhost不会被解析成IP地址，直接通过UNIXsocket连接  
