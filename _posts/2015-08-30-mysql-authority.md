@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "mysql权限管理"
+title:  "Mysql权限管理"
 date:  2015-08-30 
 categories: mysql
 comments: true

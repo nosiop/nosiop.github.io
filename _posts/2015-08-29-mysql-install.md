@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "ubuntu安装mysql"
+title:  "Mysql安装-Ubuntu"
 date:  2015-08-29 
 categories: mysql
 comments: true
