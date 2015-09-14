@@ -117,11 +117,15 @@ body {
 /*归档和分类页面*/
 .well_list h1 {
 	color: #ee4444;
+	font-size: 16px;
+}
+
+.well_list h2 {
+	color: #ee4444;
 	font-size: 18px;
 }
 
-/*归档和分类页面*/
-.well_list {
+/*归档和分类页面*/ .well_list {
 	margin-left: 150px;
 	min-height: 0px;
 	padding: 0px;

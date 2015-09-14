@@ -27,8 +27,8 @@ excerpt:
 	
 	set sendmail="/usr/bin/msmtp"
 	set use_from=yes
-	set realname="testName"
-	set from=test@163.com
+	set realname="kevin"
+	set from=kevin@163.com
 	set envelope_from=yes
 
 ---
@@ -38,11 +38,21 @@ excerpt:
 
 	$vim .msmtprc
 
+	# Set default values for all following accounts.
 	account default
+	
+	#日志文件
+	logfile ~/.msmtp.log
+	
+	# SMTP邮件服务器地址
 	host smtp.163.com
-	from test@163.com
-	auth plain
-	user test
+	
+	# 发送的邮件Email
+	from kevin@163.com
+	auth login
+	
+	# 邮件服务器登录账号和密码
+	user kevin
 	password 123456
 	
 	$logfile ~/.msmtp.log

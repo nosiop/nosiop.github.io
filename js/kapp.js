@@ -75,5 +75,23 @@ function backToTop() {
 	});
 }
 
-
+function foldCategory(obj) {
+	var id = "";
+	var speed = 230;
+	if(obj) {
+		// get <h1> id 
+		id=obj.id;
+		// make <ul> id,such as "ul-2015August"
+		ulid='ul-'+id;
+		// control display block|none
+		if($('#'+ulid).css('display') == 'none')
+			//$('#ul-'+id).show(); 
+			//$('#ul-'+id).slideDown('slow'); 
+			$('#'+ulid).slideDown(speed); 
+		else
+			//$('#ul-'+id).hide();
+			//$('#ul-'+id).fadeOut('slow');
+			$('#ul-'+id).slideUp(speed);
+	}
+}
 

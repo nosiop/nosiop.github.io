@@ -3,21 +3,21 @@ layout: default
 ---
 
 <div class="well_list">
-{%for post in site.posts %}
-    {% unless post.next %}
-        <h1>{{ post.date | date: '%Y' }}</h1>
-        <ul>
-    {% else %}
-        {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-        {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-        {% if year != nyear %}
-            </ul>
-            <h1>{{ post.date | date: '%Y' }}</h1>
-            <ul>
-        {% endif %}
-    {% endunless %}
-    <!--li><a href="{{ site.baseurl}}{{ post.url }}">{{ post.date | date: "%B %d" }} · {{ post.title }} </a></li-->
-    <li><a href="{{ site.baseurl}}{{ post.url }}">{{ post.date | date: "%B %d" }} · {{ post.title }} </a></li>
-{% endfor %}
-</ul>
+	{%for post in site.posts %}
+		
+		{% unless post.next %}
+			<h1 id="{{post.date | date: '%Y%B'}}" onclick="foldCategory(this)" style="cursor:pointer;">{{ post.date | date: '%b %Y' }}</h1>
+			<ul id="ul-{{post.date | date: '%Y%B'}}">
+		{% else %}
+			{% capture kdate %}{{ post.date | date: '%Y%B' }}{% endcapture %}
+			{% capture nkdate %}{{ post.next.date | date: '%Y%B' }}{% endcapture %}
+			{% if kdate != nkdate %}
+				</ul>
+				<h1 id="{{post.date | date: '%Y%B'}}" onclick="foldCategory(this)" style="cursor:pointer;">{{ post.date | date: '%b %Y' }}</h1>
+				<ul id="ul-{{post.date | date: '%Y%B'}}" style="display: none;">
+			{% endif %}
+		{% endunless %}
+		<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.date | date: "%B %d" }} · {{ post.title }}</a></li>
+		{% endfor %}
+	</ul>
 </div>

@@ -1,24 +1,6 @@
 ---
 layout: default
 ---
-<!--div class="well">
-{%for post in site.posts %}
-	{% unless post.next %}
-		<h1>{{ post.date | date: '%Y' }}</h1>
-		<ul>
-	{% else %}
-		{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-		{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-		{% if year != nyear %}
-			</ul>
-			<h1>{{ post.date | date: '%Y' }}</h1>
-			<ul>
-		{% endif %}
-	{% endunless %}
-	<li><a href="{{ site.baseurl}}{{ post.url }}">{{ post.date | date: "%b %-d" }} - {{ post.title }} </a></li>
-{% endfor %}
-</ul>
-</div-->
 <div id="backTop" data-toggle="tooltip" data-placement="left" title="回到顶部">
 	<a href="#top"><img src="{{site.baseurl}}/images/top.png"></a>
 </div>
@@ -28,21 +10,23 @@ layout: default
 	{%capture cate%}{{ category | first | capitalize }}{%endcapture%}
 	<!--count how number of posts under every category-->
 	{%capture cate_num%}{{ category[1].size }}{%endcapture%}
-		<a href="#{{cate}}">{{cate}}</a><sup>{{cate_num}}</sup>&nbsp&nbsp&nbsp
+	<!--a href="#{{cate}}" id="{{cate}}" onclick="foldCategory(this)">{{cate}}</a><sup>{{cate_num}}</sup-->
+	<a href="#{{cate}}">{{cate}}</a><sup>{{cate_num}}</sup>&nbsp&nbsp&nbsp
 	{% endfor %}
 	</p>
 </div>
 <div class="well_list">
 	{%for category in site.categories %}
 	{%capture cate%}{{ category | first | capitalize }}{%endcapture%}
-	<h1 id="{{cate}}">{{cate}}</h1>
-	<ul>
+	{%capture cate_num%}{{ category[1].size }}{%endcapture%}
+	<h1 id="{{cate}}" onclick="foldCategory(this)" style="cursor:pointer;">{{cate}}&nbsp·&nbsp{{cate_num}}</h1>
+	<ul id="ul-{{cate}}" style="display:block">
 		{% for posts in category %}
-		{% for post in posts %}
-		{% if post.url %}
-		<li><a href="{{ site.baseurl}}{{ post.url }}">{{ post.date | date: "%b %d" }} · {{ post.title }} </a></li>
-		{% endif %}
-		{% endfor %}
+			{% for post in posts %}
+				{% if post.url %}
+					<li><a href="{{ site.baseurl}}{{ post.url }}">{{ post.date | date: "%b %d" }} · {{ post.title }} </a></li>
+				{% endif %}
+			{% endfor %}
 		{% endfor %}
 	</ul>
 	{% endfor %}
