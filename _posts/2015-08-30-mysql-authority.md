@@ -121,12 +121,11 @@ MySQL grant、revoke用户权限注意事项
 5，特定的存储过程  
  
 ### user表中HOST列的值的意义
-<pre>
-%             匹配所有主机  
-localhost     localhost不会被解析成IP地址，直接通过UNIXsocket连接  
-127.0.0.1     会通过TCP/IP协议连接，并且只能在本机访问；  
-::1           ::1就是兼容支持ipv6的，表示同ipv4的127.0.0.1
-</pre>  
+
+	%             匹配所有主机  
+	localhost     localhost不会被解析成IP地址，直接通过UNIXsocket连接  
+	127.0.0.1     会通过TCP/IP协议连接，并且只能在本机访问；  
+	::1           ::1就是兼容支持ipv6的，表示同ipv4的127.0.0.1
 
 ---
 
@@ -212,35 +211,34 @@ localhost     localhost不会被解析成IP地址，直接通过UNIXsocket连接
 ---
 
 ## 权限说明
-<pre>
-all  
-alter  	
-alter routine	         使用alter procedure和drop procedure  
-create  
-create routine	         使用create procedure  
-create temporary tables	 使用create temporary table
-create user	
-create view	
-delete	
-drop	
-execute                  使用call和存储过程
-file                     使用select into outfile  和load data infile
-grant option	         可以使用grant和revoke
-index	                 可以使用create index 和drop index
-insert	
-lock tables              锁表
-process	                 使用show full processlist
-reload	                 使用flush
-replication client       服务器位置访问
-replocation slave        由复制从属使用
-select	
-show databases	
-show view	
-shutdown                 使用mysqladmin shutdown来关闭mysql
-super	
-update	
-usage	                 无访问权限
-</pre>
+
+	all  
+	alter  	
+	alter routine	         使用alter procedure和drop procedure  
+	create  
+	create routine	         使用create procedure  
+	create temporary tables	 使用create temporary table
+	create user	
+	create view	
+	delete	
+	drop	
+	execute                  使用call和存储过程
+	file                     使用select into outfile  和load data infile
+	grant option	         可以使用grant和revoke
+	index	                 可以使用create index 和drop index
+	insert	
+	lock tables              锁表
+	process	                 使用show full processlist
+	reload	                 使用flush
+	replication client       服务器位置访问
+	replocation slave        由复制从属使用
+	select	
+	show databases	
+	show view	
+	shutdown                 使用mysqladmin shutdown来关闭mysql
+	super	
+	update	
+	usage	                 无访问权限
 
 ---
 
