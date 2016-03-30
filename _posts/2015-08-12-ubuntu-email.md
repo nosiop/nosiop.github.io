@@ -12,15 +12,15 @@ excerpt:
 
 
 
-##安装
+## 安装
 	$sudo apt-get install mutt msmtp 
 	#一切默认设置就行。
 
 ---
 
-##配置
+## 配置
 
-###MUTT
+### MUTT
 系统全局设置`/etc/Muttrc`,如果使用某个系统用户，可以在`~/.muttrc`中设置。
 
 	$vi .muttrc
@@ -33,7 +33,7 @@ excerpt:
 
 ---
 
-###MSMTP
+### MSMTP
 创建`~/.msmtprc`和`~/.msmtp.log`,分别为配置和日志文件。
 
 	$vim .msmtprc
@@ -76,7 +76,7 @@ Capabilities:
 
 ---
 
-##测试
+## 测试
 
 到这里，你可以使用mutt来发送邮件了，我们测试一下。
 

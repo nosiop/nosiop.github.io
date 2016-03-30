@@ -10,7 +10,7 @@ excerpt:
 * content
 {:toc}
 
-##常用命令
+## 常用命令
 
 **注意：以下所有的userName都和userName@[host]有所区别,具体[HOST](#userhost)有哪些请看下表**
 
@@ -59,7 +59,7 @@ mysql5之前删除用户时必须先使用`revoke`删除用户权限，然后删
 
 ---
 
-##关于回收权限和删除用户
+## 关于回收权限和删除用户
 
 开始这个问题比较困扰，所以在此单列出来强调一下
 
@@ -106,21 +106,21 @@ MySQL grant、revoke用户权限注意事项
 
 ---
 
-##权限相关信息
+## 权限相关信息
 
-###设置权限时必须给出一下信息
+### 设置权限时必须给出一下信息
 1，要授予的权限  
 2，被授予访问权限的数据库或表  
 3，用户名  
 
-###grant和revoke可以在几个层次上控制访问权限
+### grant和revoke可以在几个层次上控制访问权限
 1，整个服务器:使用`grant all`和`revoke all`  
 2，整个数据库:使用`on database.*`  
 3，特定表:使用`on database.table`  
 4，特定的列  
 5，特定的存储过程  
  
-###user表中HOST列的值的意义
+### user表中HOST列的值的意义
 <pre>
 %             匹配所有主机  
 localhost     localhost不会被解析成IP地址，直接通过UNIXsocket连接  
@@ -130,8 +130,8 @@ localhost     localhost不会被解析成IP地址，直接通过UNIXsocket连接
 
 ---
 
-##用例
-###grant 普通数据用户：查询、插入、更新、删除数据库中所有表数据的权利。
+## 用例
+### grant 普通数据用户：查询、插入、更新、删除数据库中所有表数据的权利。
 
 	mysql>grant select on testdb.* to common_user@'%'
 	mysql>grant insert on testdb.* to common_user@'%'
@@ -140,32 +140,32 @@ localhost     localhost不会被解析成IP地址，直接通过UNIXsocket连接
 	或者，用一条MySQL命令来替代：
 	mysql>grant select,insert,update,delete on testdb.* to common_user@'%'
 
-###grant 数据库开发人员：创建表、索引、视图、存储过程、函数等权限。
+### grant 数据库开发人员：创建表、索引、视图、存储过程、函数等权限。
 
-####grant 创建、修改、删除 MySQL 数据表结构 权限
+#### grant 创建、修改、删除 MySQL 数据表结构 权限
 
 	mysql>grant create on testdb.* to developer@'192.168.0.%'；
 	mysql>grant alter on testdb.* to developer@'192.168.0.%'；
 	mysql>grant drop on testdb.* to developer@'192.168.0.%'；
 
-####grant 操作 MySQL 外键 权限
+#### grant 操作 MySQL 外键 权限
 
 	mysql>grant references on testdb.* to developer@'192.168.0.%';
 
-####grant 操作 MySQL 临时表 权限
+#### grant 操作 MySQL 临时表 权限
 
 	mysql>grant create temporary tables on testdb.* to developer@'192.168.0.%';
 
-####grant 操作 MySQL 索引 权限
+#### grant 操作 MySQL 索引 权限
 
 	mysql>grant index on testdb.* to developer@'192.168.0.%';
 
-####grant 操作 MySQL 视图、查看视图源代码 权限
+#### grant 操作 MySQL 视图、查看视图源代码 权限
 
 	mysql>grant create view on testdb.* to developer@'192.168.0.%';
 	mysql>grant show view on testdb.* to developer@'192.168.0.%';
 
-####grant 操作 MySQL 存储过程、函数 权限
+#### grant 操作 MySQL 存储过程、函数 权限
 
 	mysql>grant create routine on testdb.* to developer@'192.168.0.%';  
 	#now, can show procedure status
@@ -173,15 +173,15 @@ localhost     localhost不会被解析成IP地址，直接通过UNIXsocket连接
 	#now, you can drop a procedure
 	mysql>grant execute on testdb.* to developer@'192.168.0.%';
 
-###grant 普通 DBA 管理某个 MySQL 数据库的权限
+### grant 普通 DBA 管理某个 MySQL 数据库的权限
 
 	mysql>grant all privileges on testdb to dba@'localhost'
 	其中，关键字 “privileges” 可以省略。
 
-###grant 高级 DBA 管理 MySQL 中所有数据库的权限。
+### grant 高级 DBA 管理 MySQL 中所有数据库的权限。
 	mysql>grant all on *.* to dba@'localhost'
 
-###MySQL grant 权限，分别可以作用在多个层次上。
+### MySQL grant 权限，分别可以作用在多个层次上。
 1.grant 作用在整个 MySQL 服务器上：  
 	
 	mysql>grant select on *.* to dba@localhost;  
@@ -211,7 +211,7 @@ localhost     localhost不会被解析成IP地址，直接通过UNIXsocket连接
 
 ---
 
-##权限说明
+## 权限说明
 <pre>
 all  
 alter  	
@@ -244,7 +244,7 @@ usage	                 无访问权限
 
 ---
 
-##权限涉及数据表
+## 权限涉及数据表
 mysql授权表共有5个表：user、db、host、tables\_priv和columns\_priv。  
 授权表的内容有如下用途：    
 
@@ -265,7 +265,7 @@ columns_priv表指定列级权限。这里指定的权限适用于一个表的�
 
 ---
 
-##补充
+## 补充
 遇到 SELECT command denied to user '用户名'@'主机名' for table '表名' 这种错误，解决方法是需要把吧后面的表名授权，即是要你授权核心数据库也要。  
 
 遇到的是 SELECT command denied to user 'my'@'%' for table 'proc'，是调用存储过程的时候出现，原以为只要把指定的数据库授权就行了，什么存储过程、函数等都不用再管了，谁知道也要把数据库mysql的proc表授权  

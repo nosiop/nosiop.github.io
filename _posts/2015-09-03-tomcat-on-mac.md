@@ -11,11 +11,11 @@ excerpt:
 {:toc}
 
 
-###1.兼容性检查。
+### 1.兼容性检查。
 在终端里运行：
 
 	java -version  
-	#得到的结果是：
+	# 得到的结果是：
 	java version "1.8.0_60"
 	Java(TM) SE Runtime Environment (build 1.8.0_60-b27)
 	Java HotSpot(TM) 64-Bit Server VM (build 25.60-b23, mixed mode) 
@@ -24,26 +24,26 @@ excerpt:
 
 ---
 
-###2.下载并安装 Tomcat。
+### 2.下载并安装 Tomcat。
 
 访问 Tomcat 官网地址：(http://tomcat.apache.org/download-70.cgi)，下载 tar.gz 文件  
 解压到 `/Library/Tomcat/Home` 目录下（自己创建），在终端里输入：
 
 	export CATALINA_HOME=/Library/Tomcat/Home  
-	#回车之后不会有反馈，接着在终端继续输入：
+	# 回车之后不会有反馈，接着在终端继续输入：
 	env  
 
 能看到环境变量已经生效。
 
 ---
 
-###3.启动 Tomcat。
+### 3.启动 Tomcat。
 
 在终端输入：
 
 	/Library/Tomcat/Home/bin/startup.sh  
 
-	#结果：
+	# 结果：
 	Using CATALINA_BASE:   /Library/Tomcat/Home  
 	Using CATALINA_HOME:   /Library/Tomcat/Home  
 	Using CATALINA_TMPDIR: /Library/Tomcat/Home/temp  

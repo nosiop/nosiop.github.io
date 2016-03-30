@@ -10,7 +10,7 @@ excerpt:
 * content
 {:toc}
 
-###MYSQL安装
+### MYSQL安装
 安装了ubuntu server 15.04
 查看是否已经安装mysql-server：`apt-cache policy mysql-server`  
 通过源查询mysql-server：`apt-cache search mysql-server`  
@@ -18,16 +18,16 @@ excerpt:
 
 ---
 
-###MYSQL对外部访问授权
+### MYSQL对外部访问授权
 
 
-####1.连接进入
+#### 1.连接进入
 	
 	$mysql -u root -proot (这里密码在mysql安装过程中提示有设置)
 
 ---
 
-####2.这里直接给root的外部访问权限了
+#### 2.这里直接给root的外部访问权限了
 
 **注意：(这样做很可能不安全)**；  
 	
@@ -52,7 +52,7 @@ host = localhost 的时候,表示登陆者是本机
 
 ---
 
-####3.退出数据库
+#### 3.退出数据库
 
 这时在Windows下面远程连接该数据库，则会报  
 Can’t connect to MySQL server on ‘xxx.xxx.xxx.xxx’的错误。  
