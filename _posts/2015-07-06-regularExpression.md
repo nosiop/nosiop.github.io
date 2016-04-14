@@ -2,15 +2,13 @@
 layout: post
 title:  "正则表达式基础"
 date:  2015-07-06 
-categories: linux shell
+categories: linux shell re
 comments: true
 excerpt:
 ---
 
 * content
 {:toc}
-
-<br />
 
 ### 正则表达式简介
 
